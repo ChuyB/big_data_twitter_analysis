@@ -1,0 +1,6 @@
+vaccine
+vaccinated
+safe
+effective
+protect
+immunity
