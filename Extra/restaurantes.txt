@@ -1,0 +1,4 @@
+starbucks
+kfc
+mcdonald's
+delivery
