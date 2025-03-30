@@ -3,7 +3,6 @@ import nltk
 from nltk.corpus import stopwords
 import json
 import logging
-import gensim
 from gensim import corpora, models
 import os
 import sys
