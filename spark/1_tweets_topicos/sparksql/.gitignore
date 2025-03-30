@@ -1,0 +1,11 @@
+# Ignore output files
+output.txt
+
+# Ignore input data file
+news.json
+
+# Ignore virtual environment folder
+myenv/
+
+# IDE specific files
+.vscode/
