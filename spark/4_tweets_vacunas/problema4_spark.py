@@ -22,3 +22,16 @@ tweets_anti_vax = producto_cruz_anti.filter(lower(col("content")).contains(col("
 # Guardamos los resultados
 tweets_pro_vax.write.json("salida_problema4_provax_spark")
 tweets_anti_vax.write.json("salida_problema4_antivax_spark")
+
+# Guardamos contadores de tweets pro y anti vacunas
+numero_de_tweets_pro = tweets_pro_vax.count()
+numero = [(numero_de_tweets_pro,)]  # El entero a guardar
+columns = ["numero"]
+num = spark.createDataFrame(numero, columns)
+num.write.json("conteo/salida_problema4_num_pro_spark")
+
+numero_de_tweets_anti = tweets_anti_vax.count()
+numero = [(numero_de_tweets_anti,)]  # El entero a guardar
+columns = ["numero"]
+num = spark.createDataFrame(numero, columns)
+num.write.json("conteo/salida_problema4_num_anti_spark")
