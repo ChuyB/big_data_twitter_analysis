@@ -28,7 +28,7 @@ numero_de_tweets = tweets_gatos.count()
 numero = [(numero_de_tweets,)]  # El entero a guardar
 columns = ["numero"]
 num = spark.createDataFrame(numero, columns)
-num.write.json("salida_problema2_num_spark")
+num.write.json("conteo/salida_problema2_num_spark")
 
 # Guardamos el archivo principal resultante (no tiene tweets de gatos)
 diferencia.write.json("salida_problema2_no_gatos_spark")
