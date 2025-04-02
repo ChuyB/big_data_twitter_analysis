@@ -57,5 +57,20 @@ spark.sql("SELECT * FROM tweets_anti_vax").write.json("salida_problema4_antivax_
 spark.sql("SELECT COUNT(*) AS num_pro_sql FROM tweets_pro_vax").write.json("conteo/salida_problema4_num_pro_sql")
 spark.sql("SELECT COUNT(*) AS num_anti_sql FROM tweets_anti_vax").write.json("conteo/salida_problema4_num_anti_sql")
 
+# Conteo de usuarios pro y anti vacunas
+spark.sql("""
+    SELECT username, COUNT(*) as count
+    FROM tweets_anti_vax
+    GROUP BY username
+    ORDER BY count DESC
+""").write.json("conteo/usuarios_anti")
+
+spark.sql("""
+    SELECT username, COUNT(*) as count
+    FROM tweets_pro_vax
+    GROUP BY username
+    ORDER BY count DESC
+""").write.json("conteo/usuarios_pro")
+
 # Cerramos la sesion
 spark.stop()

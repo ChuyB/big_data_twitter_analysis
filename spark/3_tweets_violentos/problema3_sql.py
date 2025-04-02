@@ -32,7 +32,7 @@ WHERE country = 'United States'
 """)
 spark.sql("SELECT * FROM paises_tweets").show(10) # Mostrar resultado
 
-# Realizar el producto cruzado y buscar palabras clave en los tweets
+# Realizar el producto cruz y buscar palabras clave en los tweets
 spark.sql("""
 CREATE OR REPLACE TEMP VIEW producto_cruz AS
 SELECT *
